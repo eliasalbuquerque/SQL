@@ -1,0 +1,21 @@
+{
+    "dataworkspace.excludedProjects": [
+        "My_SQL/My_SQL.sqlproj"
+    ],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Local instance MySQL80",
+            "database": "company",
+            "username": "root",
+            "askForPassword": true
+        }
+    ]
+}

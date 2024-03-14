@@ -2,10 +2,10 @@
 title: 'mod3-ordenacao-agrupamentos-matematica.md'
 author: 'Elias Albuquerque'
 created: '2024-02-18'
-update: '2024-02-18'
+update: '2024-03-14'
 -->
 
-# MySQL - Ordenacao, agrupamento e funções matemáticas mais usadas
+# Módulo 3 - Ordenação, agrupamento e funções matemáticas mais usadas!
 
 - [1 - Ordene seus resultados com Order By](#1---ordene-seus-resultados-com-order-by)
 - [2 - Como limitar resultados, retornar quantidade X de linhas](#2---como-limitar-resultados-retornar-quantidade-x-de-linhas)
@@ -16,16 +16,6 @@ update: '2024-02-18'
 
 
 ## 1 - Ordene seus resultados com Order By
-
-Modelo:
-
-```sql
-SELECT coluna1, coluna2, coluna_n
-FROM tabela
-ORDER BY coluna1, coluna_n ASC | DESC
-```
-
-Ordenando dados:
 
 ```sql
 -- ordenar o limite de credito em ordem decrescente
@@ -47,16 +37,6 @@ order by creditLimit desc, customerName;
 
 ## 2 - Como limitar resultados, retornar quantidade X de linhas
 
-Modelo:
-
-```sql
-SELECT *
-FROM products
-LIMIT 5;
-```
-
-Limitando resultados:
-
 ```sql
 -- limitar visualizacao dos primeiros 5 produtos mais baratos
 select *
@@ -69,16 +49,15 @@ select *
 from products
 order by buyPrice
 limit 5 offset 5;
-```
 
-Desafio: retorne os 10 primeiros valores (amount), em ordem crescente da tabela payments.
-
-```sql
+-- Desafio: retorne os 10 primeiros valores (amount), em ordem crescente da 
+-- tabela payments.
 select amount
 from payments
 order by amount
 limit 10;
 ```
+
 
 ## 3 - Agregue valores com as funções Sum - Avg - Min - Max
 
@@ -175,7 +154,8 @@ from payments
 group by customerNumber
 having media_total between 50000 and 70000;
 
--- na tabela products, retorne os totais do estoque de cada categoria de produto, onde o total esta entre 20k e 70k:
+-- na tabela products, retorne os totais do estoque de cada categoria de 
+-- produto, onde o total esta entre 20k e 70k:
 select productLine as 'linha_produto', sum(quantityInStock) as 'qnt_estoque'
 from products
 group by linha_produto
